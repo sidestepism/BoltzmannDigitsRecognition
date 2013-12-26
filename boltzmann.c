@@ -1,6 +1,5 @@
 // boltzmann.c
 #include "boltzmann.h"
-#include "image.c"
 #define TRAIN_MODE 1
 
 void show_images_test(image_t* images, int num_image){

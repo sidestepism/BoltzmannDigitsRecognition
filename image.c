@@ -1,9 +1,6 @@
 // image.c 
+#include "boltzmann.h"
 
-typedef struct image {
-	unsigned short pixels[PIXELS];
-	unsigned short label;
-} * image_t;
 
 image_t mk_image(){
 	image_t image = (image_t) malloc(sizeof(struct image));

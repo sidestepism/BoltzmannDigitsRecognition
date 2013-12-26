@@ -1,10 +1,10 @@
-// Makefile
+# Makefile
 
 CC=gcc
 CFLAGS=-g
 OBJS=boltzmann.o image.o
 
-tokenizer : $(OBJS)
+boltzmann : $(OBJS)
 	gcc -g -o $@ $(OBJS)
 clean :
 	rm -f $(OBJS)
