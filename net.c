@@ -3,6 +3,7 @@
 #include "net.h"
 #include "limits.h"
 
+
 net_t mk_net(int units, int next_units, net_t next)
 {
     net_t net = (net_t) malloc(sizeof(struct net));
@@ -114,13 +115,13 @@ void update_weight(net_t input_layer, net_t mid_layer, net_t output_layer)
     for(i = 0; i < output_layer->units; i++){
         for(j = 0; j < mid_layer->units; j++){
 //            printf("weight add: %d * %d = %d\n", output_layer->value[i], mid_layer->value_sg[j], output_layer->value[i] * mid_layer->value_sg[j] / HIGH);
-            mid_layer->weight[j][i] -= output_layer->value[i] * mid_layer->value_sg[j] / HIGH / 10;
+            mid_layer->weight[j][i] -= output_layer->value[i] * mid_layer->value_sg[j] * ETA / HIGH;
         }
     }
 
     for(i = 0; i < mid_layer->units; i++){
         for(j = 0; j < input_layer->units; j++){
-            input_layer->weight[j][i] -= mid_layer->value[i] * input_layer->value_sg[j] / HIGH / 10;
+            input_layer->weight[j][i] -= mid_layer->value[i] * input_layer->value_sg[j] * ETA / HIGH;
         }
     }
 

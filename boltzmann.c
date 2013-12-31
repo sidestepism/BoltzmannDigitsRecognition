@@ -111,6 +111,9 @@ int main(){
     net_t output_layer = NULL;
 	setup_net(&input_layer, &mid_layer, &output_layer);
 
+    printf("MID_LAYER: %d\n", MID_UNITS);
+    printf("ALPHA: %f\n", ETA);
+
     for (int k = 0; k < 10; k++) {
         int incorrect_num = 0;
 //        printf("start\n");

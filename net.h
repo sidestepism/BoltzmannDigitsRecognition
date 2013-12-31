@@ -6,6 +6,8 @@
 #define MID_UNITS 100
 #define OUTPUT_UNITS 10
 
+#define ETA 0.003
+
 // ニューラルネットの1段
 
 struct net {
